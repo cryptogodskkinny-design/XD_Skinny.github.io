@@ -2,49 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>R.I.P. Denny Mattingly</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R.I.P. Denny Mattingly</title>
+
 <style>
+/* Neon Gradient Background Animation */
 body {
-    background: #0b0b0b;
-    color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #00ffff, #ff00ff, #00ff00, #ff0000);
+  background-size: 800% 800%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  overflow: hidden;
 }
-img {
-    width: 220px;
-    border-radius: 50%;
-    margin: 20px auto;
+
+/* Animate background gradient */
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
+
+/* Floating 3D Neon Banner */
 h1 {
-    font-size: 2.6em;
-    margin-bottom: 10px;
+  font-size: 3em;
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  animation: floatBanner 3s ease-in-out infinite;
+  margin-bottom: 30px;
 }
+
+/* Floating animation */
+@keyframes floatBanner {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg);}
+  50% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg);}
+}
+
+/* Memorial Image */
+img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+  margin-bottom: 30px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Pulse effect */
+@keyframes pulse {
+  0%, 100% { transform: scale(1);}
+  50% { transform: scale(1.05);}
+}
+
+/* Paragraph styling */
 p {
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.7;
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #e0e0e0;
+  text-shadow: 0 0 5px #00ffff;
+  margin: 0 20px;
 }
+
+/* Footer */
 footer {
-    margin-top: 50px;
-    color: #aaa;
-    font-size: 0.9em;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #aaa;
+  text-shadow: 0 0 5px #00ffff;
 }
 </style>
 </head>
 <body>
 
-<h1>R.I.P. Denny Mattingly</h1>
+<h1>R.I.P. Denny</h1>
 
 <img src="photo.jpg" alt="Denny Mattingly">
 
 <p>
-This memorial website is dedicated to the life and memory of Denny Mattingly.<br>
-Though gone, he will never be forgotten. His presence and spirit will live on forever in the hearts of those who knew him.
+This memorial website is dedicated to the life and memory of Denny Mattingly. 
+Though gone, his spirit and presence will live on forever in the hearts of those who knew him.
 </p>
 
-<footer>© 2025 Memorial Site</footer>
+<footer>
+&copy; Remembering Denny Mattingly
+</footer>
 
 </body>
 </html>
