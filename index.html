@@ -2,102 +2,124 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>R.I.P. Denny Mattingly</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* Neon Gradient Background Animation */
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(270deg, #00ffff, #ff00ff, #00ff00, #ff0000);
-  background-size: 800% 800%;
-  animation: gradientBG 15s ease infinite;
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  overflow: hidden;
-}
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    perspective: 1000px; /* 3D depth */
+  }
 
-/* Animate background gradient */
-@keyframes gradientBG {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
-}
+  /* Glitching Neon Header */
+  h1 {
+    font-size: 3em;
+    color: #00ffff;
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #ff00ff,
+      0 0 80px #ff00ff;
+    position: relative;
+    animation: float 4s ease-in-out infinite alternate,
+               glitch 2s infinite;
+  }
 
-/* Floating 3D Neon Banner */
-h1 {
-  font-size: 3em;
-  color: #00ffff;
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
-  animation: floatBanner 3s ease-in-out infinite;
-  margin-bottom: 30px;
-}
+  /* 3D floating image */
+  img {
+    width: 240px;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: pulse 2s infinite, rotate3D 6s infinite linear;
+    box-shadow: 0 0 20px #00ffff, 0 0 50px #ff00ff;
+  }
 
-/* Floating animation */
-@keyframes floatBanner {
-  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg);}
-  50% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg);}
-}
+  /* Animated paragraph */
+  p {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.7;
+    text-align: center;
+    color: #aaffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+    animation: flicker 3s infinite;
+  }
 
-/* Memorial Image */
-img {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 4px solid #00ffff;
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
-  margin-bottom: 30px;
-  animation: pulse 2s ease-in-out infinite;
-}
+  footer {
+    margin-top: 40px;
+    color: #aaa;
+    font-size: 0.9em;
+    text-shadow: 0 0 5px #00ffff;
+  }
 
-/* Pulse effect */
-@keyframes pulse {
-  0%, 100% { transform: scale(1);}
-  50% { transform: scale(1.05);}
-}
+  /* Animations */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
 
-/* Paragraph styling */
-p {
-  max-width: 700px;
-  text-align: center;
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #e0e0e0;
-  text-shadow: 0 0 5px #00ffff;
-  margin: 0 20px;
-}
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
 
-/* Footer */
-footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #aaa;
-  text-shadow: 0 0 5px #00ffff;
-}
+  @keyframes rotate3D {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+    20% {
+      text-shadow: 2px 0 5px #ff00ff, -2px 0 5px #00ffff;
+    }
+    40% {
+      text-shadow: -2px 0 5px #ff00ff, 2px 0 5px #00ffff;
+    }
+    60% {
+      text-shadow: 2px 2px 5px #ff00ff, -2px -2px 5px #00ffff;
+    }
+    80% {
+      text-shadow: -2px -2px 5px #ff00ff, 2px 2px 5px #00ffff;
+    }
+    100% {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+  }
+
 </style>
 </head>
 <body>
 
-<h1>R.I.P. Denny</h1>
-
+<h1>R.I.P. Denny Mattingly</h1>
 <img src="photo.jpg" alt="Denny Mattingly">
 
 <p>
-This memorial website is dedicated to the life and memory of Denny Mattingly. 
-Though gone, his spirit and presence will live on forever in the hearts of those who knew him.
+This memorial website honors the life and memory of Denny Mattingly.
+His spirit will live forever in the hearts of those who knew him.
 </p>
 
 <footer>
-&copy; Remembering Denny Mattingly
+&copy; 2025 Memorial Site
 </footer>
 
 </body>
